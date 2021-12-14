@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20211213 21:46:55.688" rpa="false" schemaversion="2">
+<suite id="s1" name="Demo" source="c:\Users\RamSchool\Documents\RobotFrameworkVSCode\TestCases\Demo.robot">
+<test id="s1-t1" name="TC01_LoadPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211213 21:46:55.933" level="INFO">Opening browser 'gc' to base url 'https://www.google.ca'.</msg>
+<status status="PASS" starttime="20211213 21:46:55.933" endtime="20211213 21:46:58.061"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211213 21:46:58.062" endtime="20211213 21:46:58.192"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211213 21:46:58.842" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211213 21:46:58.193" endtime="20211213 21:46:58.842"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>6s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211213 21:47:04.856" level="INFO">Slept 6 seconds</msg>
+<status status="PASS" starttime="20211213 21:46:58.843" endtime="20211213 21:47:04.856"/>
+</kw>
+<status status="PASS" starttime="20211213 21:46:55.932" endtime="20211213 21:47:04.857"/>
+</test>
+<status status="PASS" starttime="20211213 21:46:55.691" endtime="20211213 21:47:04.859"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo">Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
