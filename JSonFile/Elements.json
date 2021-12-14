@@ -6,6 +6,6 @@
     },
     "Home":{
         "welcome_Element_id":"welcome",
-        "logout_LinkText":"Logout"
+        "logout_Element_LinkText":"Logout"
     }
 }
