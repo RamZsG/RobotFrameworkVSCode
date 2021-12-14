@@ -1,0 +1,11 @@
+{
+    "Login":{
+        "username_TextInput_id":"txtUsername",
+        "password_TextInput_id":"txtPassword",
+        "login_btn_id":"btnLogin"
+    },
+    "Home":{
+        "welcome_Element_id":"welcome",
+        "logout_LinkText":"Logout"
+    }
+}
