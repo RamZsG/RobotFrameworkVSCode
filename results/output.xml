@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20211214 19:31:42.404" rpa="false" schemaversion="2">
+<suite id="s1" name="RobotFrameworkVSCode" source="C:\Users\RamSchool\Documents\RobotFrameworkVSCode">
+<suite id="s1-s1" name="TestCases" source="C:\Users\RamSchool\Documents\RobotFrameworkVSCode\TestCases">
+<suite id="s1-s1-s1" name="Login Logout Scenario" source="C:\Users\RamSchool\Documents\RobotFrameworkVSCode\TestCases\Login_Logout_Scenario.robot">
+<test id="s1-s1-s1-t1" name="Login_Flow_Test">
+<kw name="I navigate to Orange CRM" library="Resource1">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211214 19:31:42.731" level="INFO">Opening browser 'gc' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20211214 19:31:42.730" endtime="20211214 19:31:45.009"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211214 19:31:45.009" endtime="20211214 19:31:45.130"/>
+</kw>
+<status status="PASS" starttime="20211214 19:31:42.729" endtime="20211214 19:31:45.132"/>
+</kw>
+<kw name="I enter username and password" library="Resource1">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=${Username}</arg>
+<arg>Admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211214 19:31:45.140" level="INFO">Typing text 'Admin' into text field 'id=Read Element Locator Login.username_TextInput_id'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211214 19:31:45.927" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211214 19:31:45.163" endtime="20211214 19:31:45.928"/>
+</kw>
+<msg timestamp="20211214 19:31:45.931" level="FAIL">Element with locator 'id=Read Element Locator Login.username_TextInput_id' not found.</msg>
+<status status="FAIL" starttime="20211214 19:31:45.138" endtime="20211214 19:31:45.931"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=${Password}</arg>
+<arg>admin123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211214 19:31:45.931" endtime="20211214 19:31:45.932"/>
+</kw>
+<status status="FAIL" starttime="20211214 19:31:45.135" endtime="20211214 19:31:45.932"/>
+</kw>
+<kw name="I click on log in button" library="Resource1">
+<status status="NOT RUN" starttime="20211214 19:31:45.934" endtime="20211214 19:31:45.934"/>
+</kw>
+<kw name="I click on Welcome element" library="Resource1">
+<status status="NOT RUN" starttime="20211214 19:31:45.935" endtime="20211214 19:31:45.935"/>
+</kw>
+<kw name="I click on logout link" library="Resource1">
+<status status="NOT RUN" starttime="20211214 19:31:45.935" endtime="20211214 19:31:45.935"/>
+</kw>
+<status status="FAIL" starttime="20211214 19:31:42.727" endtime="20211214 19:31:45.936">Element with locator 'id=Read Element Locator Login.username_TextInput_id' not found.</status>
+</test>
+<status status="FAIL" starttime="20211214 19:31:42.452" endtime="20211214 19:31:45.938"/>
+</suite>
+<status status="FAIL" starttime="20211214 19:31:42.446" endtime="20211214 19:31:45.940"/>
+</suite>
+<status status="FAIL" starttime="20211214 19:31:42.419" endtime="20211214 19:31:45.943"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="RobotFrameworkVSCode">RobotFrameworkVSCode</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="TestCases">RobotFrameworkVSCode.TestCases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Login Logout Scenario">RobotFrameworkVSCode.TestCases.Login Logout Scenario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
