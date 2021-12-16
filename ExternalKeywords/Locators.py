@@ -1,5 +1,6 @@
 import json
-import jsonpath 
+import jsonpath
+# from jsonpath_ng import jsonpath, parse
 
 
 def read_Locator_From_Json(locatorName):
@@ -7,7 +8,11 @@ def read_Locator_From_Json(locatorName):
     response=json.loads(f.read())
     value=jsonpath.jsonpath(response, locatorName)
     str_value=json.dumps(value[0])
-    return  str_value
 
-l=read_Locator_From_Json('login_btn_id')
-print(l)
+    # value= [match.value for match in parse (locatorName).find(response)]
+    # print(value)
+    # str_value=json.dumps(value)
+    return  str_value.strip('"')
+
+# l=read_Locator_From_Json('Login.username_TextInput_id')
+# print(l)

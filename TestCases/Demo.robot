@@ -10,5 +10,5 @@ ${Browser}=    gc
 TC01_LoadPage
     Open Browser    ${URL}    ${Browser}
     Maximize Browser Window
-    Capture Page Screenshot
+    # Capture Page Screenshot
     Sleep    6s
