@@ -1,137 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20211216 16:51:36.792" rpa="false" schemaversion="2">
-<suite id="s1" name="Login Logout Scenario" source="c:\Users\RamSchool\Documents\RobotFrameworkVSCode\TestCases\Login_Logout_Scenario.robot">
-<test id="s1-t1" name="Login_Flow_Test">
-<kw name="I navigate to Orange CRM" library="Resource1">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${Browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20211216 16:51:36.991" level="INFO">Opening browser 'ff' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
-<msg timestamp="20211216 16:51:36.999" level="INFO">Firefox driver log is always forced to to: C:\Users\RamSchool\Documents\RobotFrameworkVSCode\geckodriver-5.log</msg>
-<status status="PASS" starttime="20211216 16:51:36.990" endtime="20211216 16:51:43.487"/>
+<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20211216 19:34:36.393" rpa="false" schemaversion="2">
+<suite id="s1" name="DatabaseTest" source="c:\Users\RamSchool\Documents\RobotFrameworkVSCode\TestCases\DatabaseTest.robot">
+<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
+<arg>pymysql</arg>
+<arg>${dbName}</arg>
+<arg>${dbUser}</arg>
+<arg>${dbPassword}</arg>
+<arg>${dbHost}</arg>
+<arg>${dbPort}</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20211216 19:34:36.521" level="INFO">Connecting using : pymysql.connect(db=classicmodels, user=root, passwd=admin, host=127.0.0.1, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20211216 19:34:36.450" endtime="20211216 19:34:36.528"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20211216 16:51:43.487" endtime="20211216 16:51:43.758"/>
+<test id="s1-t1" name="DeleteTableRecords">
+<kw name="Execute Sql String" library="DatabaseLibrary">
+<var>${OUTPUT}</var>
+<arg>Delete FROM employee;</arg>
+<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
+True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20211216 19:34:36.529" level="INFO">Executing : Execute SQL String  |  Delete FROM employee; </msg>
+<msg timestamp="20211216 19:34:36.550" level="INFO">${OUTPUT} = None</msg>
+<status status="PASS" starttime="20211216 19:34:36.529" endtime="20211216 19:34:36.550"/>
 </kw>
-<status status="PASS" starttime="20211216 16:51:36.990" endtime="20211216 16:51:43.758"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211216 19:34:36.551" endtime="20211216 19:34:36.552"/>
 </kw>
-<kw name="I enter username and password" library="Resource1">
-<kw name="Read Element Locator" library="Resource1">
-<var>${Username}</var>
-<arg>Login.username_TextInput_id</arg>
-<kw name="Read Locator From Json" library="Locators">
-<var>${Results}</var>
-<arg>${JSonPath}</arg>
-<msg timestamp="20211216 16:51:43.760" level="INFO">${Results} = txtUsername</msg>
-<status status="PASS" starttime="20211216 16:51:43.759" endtime="20211216 16:51:43.760"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20211216 19:34:36.554" level="INFO">Argument types are:
+&lt;class 'NoneType'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20211216 19:34:36.553" endtime="20211216 19:34:36.554"/>
 </kw>
-<msg timestamp="20211216 16:51:43.760" level="INFO">${Username} = txtUsername</msg>
-<status status="PASS" starttime="20211216 16:51:43.759" endtime="20211216 16:51:43.760"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=${Username}</arg>
-<arg>Admin</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20211216 16:51:43.761" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
-<status status="PASS" starttime="20211216 16:51:43.761" endtime="20211216 16:51:43.812"/>
-</kw>
-<kw name="Read Element Locator" library="Resource1">
-<var>${Password}</var>
-<arg>Login.password_TextInput_id</arg>
-<kw name="Read Locator From Json" library="Locators">
-<var>${Results}</var>
-<arg>${JSonPath}</arg>
-<msg timestamp="20211216 16:51:43.814" level="INFO">${Results} = txtPassword</msg>
-<status status="PASS" starttime="20211216 16:51:43.813" endtime="20211216 16:51:43.814"/>
-</kw>
-<msg timestamp="20211216 16:51:43.814" level="INFO">${Password} = txtPassword</msg>
-<status status="PASS" starttime="20211216 16:51:43.813" endtime="20211216 16:51:43.814"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>id=${Password}</arg>
-<arg>admin123</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20211216 16:51:43.814" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
-<msg timestamp="20211216 16:51:43.820" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20211216 16:51:43.827" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20211216 16:51:43.814" endtime="20211216 16:51:43.827"/>
-</kw>
-<status status="PASS" starttime="20211216 16:51:43.758" endtime="20211216 16:51:43.828"/>
-</kw>
-<kw name="I click on log in button" library="Resource1">
-<kw name="Read Element Locator" library="Resource1">
-<var>${Login_btn}</var>
-<arg>Login.login_btn_id</arg>
-<kw name="Read Locator From Json" library="Locators">
-<var>${Results}</var>
-<arg>${JSonPath}</arg>
-<msg timestamp="20211216 16:51:43.829" level="INFO">${Results} = btnLogin</msg>
-<status status="PASS" starttime="20211216 16:51:43.829" endtime="20211216 16:51:43.829"/>
-</kw>
-<msg timestamp="20211216 16:51:43.829" level="INFO">${Login_btn} = btnLogin</msg>
-<status status="PASS" starttime="20211216 16:51:43.828" endtime="20211216 16:51:43.829"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>id=${Login_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20211216 16:51:43.830" level="INFO">Clicking button 'id=btnLogin'.</msg>
-<status status="PASS" starttime="20211216 16:51:43.829" endtime="20211216 16:51:45.208"/>
-</kw>
-<status status="PASS" starttime="20211216 16:51:43.828" endtime="20211216 16:51:45.209"/>
-</kw>
-<kw name="I click on Welcome element" library="Resource1">
-<kw name="Read Element Locator" library="Resource1">
-<var>${Welcome}</var>
-<arg>Home.welcome_Element_id</arg>
-<kw name="Read Locator From Json" library="Locators">
-<var>${Results}</var>
-<arg>${JSonPath}</arg>
-<msg timestamp="20211216 16:51:45.210" level="INFO">${Results} = welcome</msg>
-<status status="PASS" starttime="20211216 16:51:45.210" endtime="20211216 16:51:45.210"/>
-</kw>
-<msg timestamp="20211216 16:51:45.210" level="INFO">${Welcome} = welcome</msg>
-<status status="PASS" starttime="20211216 16:51:45.209" endtime="20211216 16:51:45.210"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=${Welcome}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211216 16:51:45.211" level="INFO">Clicking element 'id=welcome'.</msg>
-<status status="PASS" starttime="20211216 16:51:45.210" endtime="20211216 16:51:45.429"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20211216 16:51:48.431" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20211216 16:51:45.429" endtime="20211216 16:51:48.431"/>
-</kw>
-<status status="PASS" starttime="20211216 16:51:45.209" endtime="20211216 16:51:48.431"/>
-</kw>
-<kw name="I click on logout link" library="Resource1">
-<kw name="Read Element Locator" library="Resource1">
-<var>${Logout}</var>
-<arg>Home.logout_Element_LinkText</arg>
-<kw name="Read Locator From Json" library="Locators">
-<var>${Results}</var>
-<arg>${JSonPath}</arg>
-<msg timestamp="20211216 16:51:48.432" level="INFO">${Results} = Logout</msg>
-<status status="PASS" starttime="20211216 16:51:48.432" endtime="20211216 16:51:48.433"/>
-</kw>
-<msg timestamp="20211216 16:51:48.433" level="INFO">${Logout} = Logout</msg>
-<status status="PASS" starttime="20211216 16:51:48.432" endtime="20211216 16:51:48.433"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>link=${Logout}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20211216 16:51:48.433" level="INFO">Clicking link 'link=Logout'.</msg>
-<status status="PASS" starttime="20211216 16:51:48.433" endtime="20211216 16:51:48.760"/>
-</kw>
-<status status="PASS" starttime="20211216 16:51:48.432" endtime="20211216 16:51:48.760"/>
-</kw>
-<status status="PASS" starttime="20211216 16:51:36.989" endtime="20211216 16:51:48.761"/>
+<status status="PASS" starttime="20211216 19:34:36.528" endtime="20211216 19:34:36.554"/>
 </test>
-<status status="PASS" starttime="20211216 16:51:36.794" endtime="20211216 16:51:48.764"/>
+<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20211216 19:34:36.556" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20211216 19:34:36.556" endtime="20211216 19:34:36.556"/>
+</kw>
+<status status="PASS" starttime="20211216 19:34:36.396" endtime="20211216 19:34:36.556"/>
 </suite>
 <statistics>
 <total>
@@ -140,7 +53,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Login Logout Scenario">Login Logout Scenario</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="DatabaseTest">DatabaseTest</stat>
 </suite>
 </statistics>
 <errors>
